@@ -29,7 +29,7 @@ for lt,ln,el in zip(lat,lon,elev):
     fg.add_child(folium.CircleMarker(location = [lt,ln],radius= 5 ,popup=str(el)+"  m" , fill_color = color_gen(el),color = 'grey', fill_opacity = 0.7  ))
     
 
-fg = add_child(folium.GeoJson())
+fg = add_child(folium.GeoJson(data = (open('world.json','r'))))
 
 
 mymap.add_child(fg)
